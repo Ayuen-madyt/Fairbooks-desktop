@@ -1,0 +1,13 @@
+{
+  "name": "PatchRun",
+  "label": "Patch Run",
+  "naming": "manual",
+  "fields": [
+    {
+      "fieldname": "name",
+      "fieldtype": "Data",
+      "label": "Name",
+      "required": true
+    }
+  ]
+}

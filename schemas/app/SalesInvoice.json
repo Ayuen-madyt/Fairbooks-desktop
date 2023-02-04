@@ -1,0 +1,27 @@
+{
+  "name": "SalesInvoice",
+  "label": "Sales Invoice",
+  "extends": "Invoice",
+  "naming": "numberSeries",
+  "showTitle": true,
+  "fields": [
+    {
+      "fieldname": "items",
+      "label": "Items",
+      "fieldtype": "Table",
+      "target": "SalesInvoiceItem",
+      "required": true,
+      "edit": true
+    },
+    {
+      "fieldname": "numberSeries",
+      "label": "Number Series",
+      "fieldtype": "Link",
+      "target": "NumberSeries",
+      "create": true,
+      "required": true,
+      "default": "SINV-"
+    }
+  ],
+  "keywordFields": ["name", "party"]
+}
