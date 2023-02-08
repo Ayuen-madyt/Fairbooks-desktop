@@ -80,6 +80,7 @@ import { getErrorMessage } from 'src/utils';
 import { getSetupWizardDoc } from 'src/utils/misc';
 import { showMessageDialog } from 'src/utils/ui';
 import Slide from './Slide.vue';
+import { fyo } from 'src/initFyo';
 
 export default {
   name: 'SetupWizard',
@@ -146,6 +147,7 @@ export default {
         });
       }
 
+      fyo.config.set('freeTrialStartDate', new Date());
       this.loading = true;
       this.$emit('setup-complete', this.doc.getValidDict());
     },

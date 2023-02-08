@@ -23,7 +23,7 @@
     "@popperjs/core": "^2.10.2",
     "better-sqlite3": "^7.5.3",
     "core-js": "^3.19.0",
-    "electron-store": "^8.0.1",
+    "electron-store": "^8.1.0",
     "feather-icons": "^4.28.0",
     "knex": "^2.4.0",
     "lodash": "^4.17.21",

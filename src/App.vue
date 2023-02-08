@@ -1,5 +1,7 @@
 <template>
+ <div>
   <div
+    v-if="!freeTrialOver"
     id="app"
     class="h-screen flex flex-col font-sans overflow-hidden antialiased"
     :dir="languageDirection"
@@ -35,6 +37,19 @@
       <div id="toast-target" />
     </div>
   </div>
+  <div v-else class="free-trial">
+    <div>
+      <img src="./assets/img/fairbooks-logo.svg" />
+    </div>
+    <hr class="horizontal-rule"/>
+    <h1 class="free-title">Your Free Trial is Over !</h1>
+    <h1 class="contact-org">Contact The Organization</h1>
+    <div class="contact-info">
+      <h1>Phone: +254715705161</h1>
+      <h1>Email: fairbooks.info@gmail.com</h1>
+    </div>
+  </div>
+ </div>
 </template>
 
 <script>
@@ -71,6 +86,8 @@ export default {
       companyName: '',
       searcher: null,
       shortcuts: null,
+      daysSinceFirstUse: (new Date() - new Date(fyo.config.get("freeTrialStartDate"))) / (1000 * 60 * 60 * 24),
+      freeTrialOver: false,
     };
   },
   provide() {
@@ -94,6 +111,10 @@ export default {
       ConfigKeys.LastSelectedFilePath,
       null
     );
+    // performing condition if days since the first use is greater
+     if(this.daysSinceFirstUse>60){
+      this.freeTrialOver = true;
+    }
 
     if (!lastSelectedFilePath) {
       return (this.activeScreen = 'DatabaseSelector');
@@ -184,3 +205,32 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  .free-trial{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+ 
+  .free-title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+  .horizontal-rule {
+    border-top: 1px solid rgb(104, 103, 103);
+    width: 30%;
+    margin: 20px auto;
+  }
+  .contact-org{
+    /* margin-left: 50px; */
+    font-size: 20px;
+    font-weight: 560;
+  }
+  .contact-info{
+    margin-top: 20px;
+  }
+</style>
