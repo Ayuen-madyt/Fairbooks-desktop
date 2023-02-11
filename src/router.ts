@@ -5,6 +5,8 @@ import DataImport from 'src/pages/DataImport.vue';
 import GeneralForm from 'src/pages/GeneralForm.vue';
 import GetStarted from 'src/pages/GetStarted.vue';
 import InvoiceForm from 'src/pages/InvoiceForm.vue';
+// importing pos invoice form
+import InvoicePosForm from 'src/pages/InvoicePosForm.vue';
 import JournalEntryForm from 'src/pages/JournalEntryForm.vue';
 import ListView from 'src/pages/ListView/ListView.vue';
 import PrintView from 'src/pages/PrintView/PrintView.vue';
@@ -78,6 +80,19 @@ const routes: RouteRecordRaw[] = [
     components: {
       default: InvoiceForm,
       edit: QuickEditForm,
+    },
+    props: {
+      default: true,
+      edit: (route) => route.query,
+    },
+  },
+  // pos invoice
+  {
+    path: '/pos/:schemaName/:name',
+    name: 'InvoicePosForm',
+    components: {
+      default: InvoicePosForm,
+      edit: QuickEditForm,      
     },
     props: {
       default: true,

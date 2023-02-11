@@ -23,6 +23,8 @@ import {
   ToastOptions,
 } from './types';
 
+export const docsPath = ref('');
+
 export async function openQuickEdit({
   doc,
   schemaName,

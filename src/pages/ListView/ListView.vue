@@ -12,6 +12,18 @@
       <Button
         :icon="true"
         type="primary"
+        @click="openPos"
+        :padding="false"
+        class="px-3"
+        v-if="this.schemaName === 'SalesInvoice'"        
+      >
+        <feather-icon name="layout" class="w-4 h-4" />
+        <span class="ml-1">{{ t`Open POS` }} </span>
+        
+      </Button>
+      <Button
+        :icon="true"
+        type="primary"
         @click="makeNewDoc"
         :padding="false"
         class="px-3"
@@ -53,6 +65,7 @@ import {
 } from 'src/utils/misc';
 import { docsPathRef } from 'src/utils/refs';
 import { openQuickEdit, routeTo } from 'src/utils/ui';
+import { ModelNameEnum } from '../../../models/types';
 import List from './List.vue';
 
 export default {
@@ -120,6 +133,16 @@ export default {
         const path = this.getFormPath(doc);
         this.$router.replace(path);
       });
+    },
+    async openPos(){
+      const doc = await fyo.doc.getNewDoc(ModelNameEnum.SalesInvoice, this.filters ?? {});
+      //Need to understand a better method from Frappe Team.
+      const path =  `/pos/SalesInvoice/${doc.name}`;      
+      routeTo(path);
+      doc.on('afterSync', () => {
+        const path =  `/pos/SalesInvoice/${doc.name}`;
+        this.$router.replace(path);
+      });      
     },
     applyFilter(filters) {
       this.$refs.list.updateData(filters);
