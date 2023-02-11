@@ -107,40 +107,6 @@ computer) check the _Building_ section at
 
 So to build for linux you could use the `--linux` flag like so: `yarn electron:build --linux`.
 
-## Contributions and Community
-
-There are many ways you can contribute even if you don't code:
-
-1. If you find any issues, no matter how small (even typos), you can [raise an issue](https://github.com/fair/books/issues/new) to inform us.
-2. You can help us with language support by [contributing translations](https://github.com/fair/books/wiki/Contributing-Translations).
-3. You can join our [telegram group](https://t.me/fairbooks) and share your thoughts.
-4. If you're an ardent user you can tell us what you would like to see.
-5. If you have accounting requirements, you can become an ardent user. 🙂
-
-If you want to contribute code then you can fork this repo, make changes and raise a PR. ([see how to](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork))
-
-## Links
-
-- [Telegram Group](https://t.me/fairbooks): Used for discussions regarding features, issues, changes, etc. This group is also be used to make decisions regarding project direction.
-- [Project Board](https://github.com/fair/books/projects/1): Roadmap that is updated with acceptable latency.
-- [GitHub Discussions](https://github.com/fair/books/discussions): Used for discussions around a specific topic.
-- [fair Books Blog](https://tech.fairbooks.com/): Sporadically updated dev blog regarding the development of this project.
-
-## Translation Contributors
-
-| Language           | Contributors                                                                                     |
-| ------------------ | ------------------------------------------------------------------------------------------------ |
-| French             | [DeepL](https://www.deepl.com/), [mael-chouteau](https://github.com/mael-chouteau)               |
-| German             | [DeepL](https://www.deepl.com/), [barredterra](https://github.com/barredterra)                   |
-| Portuguese         | [DeepL](https://www.deepl.com/)                                                                  |
-| Arabic             | [taha2002](https://github.com/taha2002)                                                          |
-| Catalan            | Dídac E. Jiménez                                                                                 |
-| Dutch              | [FastAct](https://github.com/FastAct)                                                            |
-| Spanish            | [talmax1124](https://github.com/talmax1124)                                                      |
-| Gujarati           | [dhruvilxcode](https://github.com/dhruvilxcode), [4silvertooth](https://github.com/4silvertooth) |
-| Korean             | [Isaac-Kwon](https://github.com/Isaac-Kwon)                                                      |
-| Simplified Chinese | [wcxu21](https://github.com/wcxu21)                                                              |
-| Swedish            | [papplo](https://github.com/papplo)                                                              |
 
 ## License
 
