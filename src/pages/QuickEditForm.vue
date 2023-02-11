@@ -29,7 +29,7 @@
           v-if="doc?.canSave"
           class="text-white text-xs"
         >
-          {{ t`Save` }}
+          {{ t`Pay` }}
         </Button>
         <Button
           :icon="true"
