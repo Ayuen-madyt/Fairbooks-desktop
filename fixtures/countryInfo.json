@@ -2603,13 +2603,16 @@
     "South Sudan": 
     {
         "code": "ss",
+        "currency": "SSP",
         "currency_fraction": "Piastre",
         "currency_fraction_units": 100,
-        "currency_symbol": "£",
+        "currency_name": "South Sudanese Pound",
+        "currency_symbol": "SSP",
         "timezones": 
         [
             "Africa/Juba"
-        ]
+        ],
+        "locale": "en-SS"
     },
     "Spain": 
     {

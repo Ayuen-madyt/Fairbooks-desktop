@@ -42,31 +42,40 @@
               >{{ t`Submit` }}</Button
             >
           </template>
-          <template #items v-if="doc">          
+          <template #items v-if="doc">       
             <div>
-              <div class="container x-auto">
-                <input
-                  ref="input"
-                  type="search"
-                  autocomplete="off"
-                  spellcheck="false"
-                  :placeholder="t`Type to search...`"
-                  v-model="inputValue"
-                  @focus="search"
-                  @input="getSearchInput"
-                  class="
-                    bg-gray-100
-                    text-xl
-                    focus:outline-none
-                    w-full
-                    placeholder-gray-500
-                    text-gray-900
-                    rounded-xl
-                    p-3
-                    mt-4
-                    mb-3
-                  "
-                />
+              <div class="container x-auto" >
+                <div :style="{display:'flex', justifyContent:'space-around', alignItems:'center'}">
+                  <input
+                    ref="input"
+                    type="search"
+                    autocomplete="off"
+                    spellcheck="false"
+                    :placeholder="t`Type to search...`"
+                    v-model="inputValue"
+                    @focus="search"
+                    @input="getSearchInput"
+                    class="
+                      bg-gray-100
+                      text-xl
+                      focus:outline-none
+                      w-50
+                      placeholder-gray-500
+                      text-gray-700
+                      rounded-xl
+                      p-1
+                      mt-4
+                      mb-3
+                    "
+                  />
+                  <div>
+                      <!-- barcode -->
+                      <Barcode
+                        @item-selected="(name) => doc.addItem(name)"
+                      />   
+                  </div>
+                </div>
+
                 <div class="flex flex-wrap">   
                   <!-- Column --> 
                   <div v-for="item in filteredItems" :key="item.name" class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">                
@@ -318,6 +327,7 @@
     
   </template>
   <script>
+  import Barcode from 'src/components/Controls/Barcode.vue';
   import { computed } from '@vue/reactivity';
   import { getDocStatus } from 'models/helpers';
   import { ModelNameEnum } from 'models/types';
@@ -353,7 +363,8 @@
       PosContainer,
       QuickEditForm,
       ExchangeRate,
-      Paginator    
+      Paginator,    
+      Barcode
     },
     provide() {
       return {

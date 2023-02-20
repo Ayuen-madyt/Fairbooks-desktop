@@ -309,7 +309,7 @@ export default {
     async submit() {
       this.statusText = t`Submitting`;
       try {
-        await this.$refs.form.submit();
+         await this.$refs.form.submit();
         setTimeout(() => {
           this.statusText = null;
         }, 300);
