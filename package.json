@@ -95,11 +95,11 @@
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
-  "homepage": "https://frappebooks.com",
+  "homepage": "https://fairbooks.vercel.app/",
   "lint-staged": {
     "*.{js,vue}": "vue-cli-service lint"
   },
   "repository": {
-    "url": "https://github.com/frappe/books"
+    "url": "https://github.com/Ayuen-madyt/Fairbooks-desktop"
   }
 }
